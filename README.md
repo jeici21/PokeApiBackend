@@ -28,6 +28,8 @@ To deploy this project run
   cd PokeApiBackend
   docker-compose up
 ```
+`http://localhost:3000/api/docs`
+
 ## API Reference
 
 #### Heath check
