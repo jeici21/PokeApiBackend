@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=pokeapi
+      - POSTGRES_USER=userLocalDev
+      - POSTGRES_PASSWORD=passwordLocalDev
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - bridgenetwork
+
+  backend:
+    container_name: backend
+    image: backend-server
+    restart: always
+    build:
+        context: .
+        dockerfile: Dockerfile
+        target: base
+    depends_on:
+        - db
+    environment:
+      - DATABASE=pokeapi
+      - DBUSERNAME=userLocalDev
+      - DBPASSWORD=passwordLocalDev
+      - DBHOST=db
+      - DBPORT=5432
+    ports:
+      - "3000:3000"
+    networks:
+      - bridgenetwork
+
+networks:
+  bridgenetwork:
+    driver: bridge
