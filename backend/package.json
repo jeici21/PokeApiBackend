@@ -1,0 +1,45 @@
+{
+  "name": "pokeapi-backend",
+  "version": "1.0.0",
+  "description": "A simple backend implementation of pokedex api",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeici21/PokeApiBackend.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "javascript",
+    "pokemon",
+    "pokedex",
+    "postgresql",
+    "docker",
+    "sequelize",
+    "rest",
+    "api"
+  ],
+  "author": "Jorge Castro Vargas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeici21/PokeApiBackend/issues"
+  },
+  "homepage": "https://github.com/jeici21/PokeApiBackend#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.25.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
